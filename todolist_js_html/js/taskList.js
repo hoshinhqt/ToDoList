@@ -6,13 +6,17 @@ function TaskList(){
     };
 
     this.findIndex = function(input){
-        var vitri = -1;;
-        this.arr.forEach(function( items, index) {
-           if( items.id === input){
-            vitri = index;
-           };
-        });                 
-        return vitri;       
+        // var vitri = -1;;
+        // this.arr.forEach(function( items, index) {
+        //    if( items.id === input){
+        //     vitri = index;
+        //    };
+        // });                 
+        // return vitri;   
+        
+        return this.arr.findIndex(function(items){
+            return items.id === input;
+        });
     };
     
     this.deleteTask = function(task){
